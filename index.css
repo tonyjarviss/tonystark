@@ -1,0 +1,12 @@
+body {
+	height: 100vh;
+}
+
+#video {
+	display: flex;
+	flex-direction: row;
+}
+
+#selector {
+	margin: 20px;
+}

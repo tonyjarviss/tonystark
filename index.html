@@ -1,0 +1,88 @@
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+
+    <title>DashPlayer</title>
+    <meta name="description" content="P3 DASH asignatura IRAC">
+    <meta name="author" content="M12 eq.24">
+
+    <!--Bootstrap library-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="	sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+   <!--Dash.js library-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dashjs/3.1.0/dash.all.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="index.css">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/img/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+  </head>
+
+  <body>
+    <img src="./img/logo.png" alt="logo" width="333" height="64">
+
+  	<!-- Parte 1
+  	<video class="dashjs-player" autoplay controls preload="auto">
+  		<source src="https://dash.akamaized.net/envivio/EnvivioDash3/manifest.mpd" type="application/dash+xml"/>
+  	</video>
+    -->
+    <div id='video'>
+
+      <div>
+        <video class="dashjs-player" autoplay controls preload="auto" muted width="640" height="360">
+        </video>
+      </div>
+
+      <div id='selector'>
+        <p>Choose a source:</p>
+        <form >
+            <input type="radio" name="source" value="https://dash.akamaized.net/envivio/EnvivioDash3/manifest.mpd"> Envivio stream<br>
+            <input type="radio" name="source" value="./output/stream.mpd"> Joker<br>
+            <input type="button" onclick="changeSource()" value="Load">
+        </form>
+
+        <code>
+        <p>Video Bitrate: <span id="bitrate"></span> Kbps</p>
+        <p>Video Buffer: <span id="buffer"></span> seconds</p>
+        <p>Video Representation: <span id="representation"></span></p>
+      </code>
+
+      </div>
+  	
+    </div>
+
+  	<div id='stats'>
+      <canvas id="chart" role="img"></canvas>
+
+      
+  	</div>
+    
+
+  	<!-- Parte 1
+  	<script>
+  		var player;
+  		document.addEventListener("DOMContentLoaded", function () {
+  		 init();
+  		});
+  		function init(){
+  		 player = dashjs.MediaPlayerFactory.create( document.querySelector(".dashjs-player"));
+  		};
+    	</script>
+      -->
+    <script src="./logic.js"></script>
+
+    
+
+    <!-- Scripts bootstrap (por si se usa)
+
+    	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+    -->
+  </body>
+</html>
