@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", function () {
 const protData = {
 "org.w3.clearkey": {
   "clearkeys": {
-    "BOjYSDCWBROtBL1jz6P0mw": "MB1EfDYb5yYCABLSRMia2w" // <kid>:<key>
+    "osIoEgk8TRatPkGAY5qVeQ": "bw3WHU6nHpEvgTpJUgUkLA" // <kid>:<key>
   }
 }
 };
@@ -46,7 +46,7 @@ function addData(chart,label, data) {
 function init(){
     var video,
     player,
-    mpd_url = "./output/stream.mpd";
+    mpd_url = "https://delta45tatasky.akamaized.net/out/i/722.mpd";
     //mpd_url = "https://dash.akamaized.net/envivio/EnvivioDash3/manifest.mpd"
 
     function changeSource() {
